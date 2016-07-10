@@ -17,12 +17,17 @@ es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 mdg:validated-method    # Wrapper package for methods
+aldeed:collection2
+dburles:collection-helpers
+
 
 react-meteor-data       # Meteor data integration for React
-
 kadira:flow-router
-kadira:react-layout
+# kadira:react-layout
 
 
 # practicalmeteor:mocha
 # tmeasday:check-npm-versions
+# reywood:publish-composite
+# reactive-dict
+# simple:rest
