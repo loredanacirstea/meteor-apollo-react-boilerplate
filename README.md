@@ -2,7 +2,13 @@
 
 For Meteor >=1.3
 
-Created after https://guide.meteor.com + personal preference.
+Created after 
+
+- https://guide.meteor.com
+- https://github.com/apollostack/meteor-starter-kit
+- personal preference.
+
+Don't forget `meteor npm install`
 
 ## Folder structure
 
@@ -54,33 +60,14 @@ server/
 ## Steps
 
 
-### Linting
+## Linting
 
 ```
 meteor npm install --save-dev eslint-config-airbnb eslint-plugin-import eslint-plugin-meteor eslint-plugin-react eslint-plugin-jsx-a11y eslint-import-resolver-meteor eslint
 ```
 
-### NPM
 
-```
-
-meteor npm install --save react-mounter react react-dom react-addons-transition-group \
- react-addons-css-transition-group react-addons-linked-state-mixin \
- react-addons-create-fragment react-addons-update react-addons-pure-render-mixin \
- react-addons-test-utils react-addons-perf
- 
-meteor npm install --save meteor-node-stubs
-
-```
-- when using Meteor <1.3 packages with React dependencies:
-
-```
-
-
-
-```
-
-### Testing
+## Testing
 
 ```
 meteor test --driver-package <driver-package>
