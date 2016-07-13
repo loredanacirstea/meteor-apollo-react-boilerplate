@@ -1,5 +1,7 @@
 # Meteor - Apollo - React boilerplate
 
+(in work)
+
 For Meteor >=1.3
 
 Created after 
