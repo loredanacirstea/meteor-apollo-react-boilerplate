@@ -18,6 +18,7 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 mdg:validated-method    # Wrapper package for methods
 aldeed:collection2
+kuip:schema-graphql-bridge
 dburles:collection-helpers
 
 

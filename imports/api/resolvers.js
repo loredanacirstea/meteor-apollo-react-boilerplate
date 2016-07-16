@@ -1,20 +1,30 @@
-import { models } from '/imports/api/connectors';
+import listResolvers from './lists/lists-resolvers';
+import listMocks from './lists/lists-mocks';
 
 const resolvers = {
   Query: {
     list(root, args, context) {
-      console.log('resolvers Query - list');
-      console.log(root);
-      console.log(args);
-      console.log(context);
+      return listMocks.List
+    }
+  },
+  //List: listResolvers.List
+}
+
+export default resolvers;
+
+/*import { connectormodels as models } from '/imports/api/connectors';
+
+const resolvers = {
+  Query: {
+    list(root, args, context) {
       return models.List.findOne(args.id);
-      //return context.connectors.List.findOne(args.id);
-      // return context.List..
+
     },
-    /*lists(root, args, context) {
+    lists(root, args, context) {
       return models.List.find();
-    },*/
+    },
     task(root, args, context) {
+      console.log(context);
       return models.Task.findOne(args.id);
     },
   },
@@ -38,4 +48,4 @@ const resolvers = {
   },
 }
 
-export default resolvers;
+export default resolvers;*/
