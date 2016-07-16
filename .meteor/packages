@@ -26,9 +26,6 @@ kadira:flow-router
 # kadira:react-layout
 
 apollo
-kuip:apollo-connector-couchdb
-
-meteorhacks:picker
 
 # practicalmeteor:mocha
 # tmeasday:check-npm-versions

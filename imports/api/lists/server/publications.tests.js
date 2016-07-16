@@ -1,1 +1,1 @@
-# tests for the list publications
+// tests for the list publications

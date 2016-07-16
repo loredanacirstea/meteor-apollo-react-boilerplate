@@ -3,5 +3,5 @@
 */
 
 export const listHook = {
-  afterInsertList(doc) {...}
+  afterInsertList(doc) {}
 }

@@ -1,8 +1,9 @@
+/*
 import { CouchDBConnector } from 'meteor/kuip:apollo-connector-couchdb';
 
 const couchDB = new CouchDBConnector({
-  host: 'http://orobo.go.ro',
-  port: 5984,
+  host: ,
+  port: ,
 });
 
 
@@ -24,20 +25,8 @@ export const connectors = {
   couchDB: new CouchDBConnector(couchDB)
 }
 
-//export default connectors;
-
 export const models = {
-  List: new Model({ connector: couchDB.db('lists') }),
-  Task: new Model({ connector: couchDB.db('tasks') }),
-  //List: new List({db: 'couchDB'})
-  //Post: new Post({ postDb: 'sql', viewsDb: 'mongo' })
+  List: new Model({ db: 'couchDB' }),
+  Task: new Model({ db: 'couchDB' }),
 }
-
-//export default models;
-
-
-export const context = {
-  List: new Model( { connector: CouchDBConnector })
-}
-
-//export default context;
+*/
