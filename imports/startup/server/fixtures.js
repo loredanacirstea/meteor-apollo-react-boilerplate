@@ -1,1 +1,1 @@
-# fill the DB with example data on startup
+// fill the DB with example data on startup

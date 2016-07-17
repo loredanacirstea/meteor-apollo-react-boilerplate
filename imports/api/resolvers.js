@@ -1,13 +1,23 @@
+import Lists from './lists/lists';
+import Tasks from './tasks/tasks';
+
 import listResolvers from './lists/lists-resolvers';
-import listMocks from './lists/lists-mocks';
+import taskResolvers from './tasks/tasks-resolvers';
 
 const resolvers = {
   Query: {
     list(root, args, context) {
-      return listMocks.List
+      return Lists.findOne(args.id);
+    },
+    task(root, args, context) {
+      return Tasks.findOne(args.id);
+    },
+    taskss(root, args, context) {
+      return Tasks.find({list: args.id}).fetch;
     }
   },
-  //List: listResolvers.List
+  List: listResolvers,
+  Task: taskResolvers
 }
 
 export default resolvers;

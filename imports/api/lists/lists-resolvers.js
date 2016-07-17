@@ -1,6 +1,11 @@
 import SchemaBridge from 'meteor/kuip:schema-graphql-bridge';
 import Lists from './lists';
+import Tasks from '../tasks/tasks';
 
-const listResolvers = SchemaBridge.resolvers({schema: Lists.schema, name: 'List'});
+let listResolvers = SchemaBridge.resolvers(Lists.schema);
+
+listResolvers.tasks = (root, args, context) => {
+  return Tasks.find({list: root._id}).fetch();
+};
 
 export default listResolvers;

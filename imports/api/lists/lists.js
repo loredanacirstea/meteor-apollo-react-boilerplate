@@ -8,6 +8,15 @@ import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 const Lists = new Mongo.Collection('Lists');
+
+const subList = new SimpleSchema({
+  field1: {
+    type: String
+  },
+  field2: {
+    type: Number
+  }
+});
   
 Lists.schema = new SimpleSchema({
   title: { 
@@ -24,13 +33,16 @@ Lists.schema = new SimpleSchema({
     type: Number 
   },
   locked: {
-      type: String,
-      label: 'Locked',
-      optional: true,
+    type: Boolean,
+    label: 'Locked',
+    optional: true,
   },
   creator: {
-      type: String,
-      label: 'Creator'
+    type: String,
+    label: 'Creator'
+  },
+  sublist: {
+    type: subList
   },
 });
 Lists.attachSchema(Lists.schema);

@@ -1,10 +1,15 @@
 import listSchema from './lists/lists-schema';
+import taskSchema from './tasks/tasks-schema';
 
 const schema = [`
   ${listSchema}
 
+  ${taskSchema}
+
   type Query {
-    list(id: String!): List
+    list(id: String): List
+    task(id: String!): Task
+    taskss(id: String!): [Task]
   }
 
   schema {
