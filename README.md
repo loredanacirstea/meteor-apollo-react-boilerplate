@@ -1,3 +1,5 @@
+! also check out https://github.com/kuip/meteor-schema-graphql-bridge (change your Simple Schema and GraphQL schema definitions get changed automatically).
+
 # Meteor - Apollo - React boilerplate
 
 (in work)
