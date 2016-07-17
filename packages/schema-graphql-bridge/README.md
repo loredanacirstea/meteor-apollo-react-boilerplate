@@ -10,6 +10,8 @@ Define your Simple Schemas for your collection and let `schema-graphql-bridge` d
 
 - demo: https://www.youtube.com/watch?v=5Z7ZSUIdamg
 
+- take a look at: https://github.com/loredanacirstea/meteor-apollo-react-boilerplate/tree/master/imports/api
+
 ```
   let schema = SchemaBridge.schema(SimpleSchema, [options]);
   let resolvers = SchemaBridge.resolvers(SimpleSchema, [options]);
@@ -97,6 +99,19 @@ Options: `{name: String, fields: [], except: []}`
   export default taskResolvers;
 ```
 
-## Caveats
+## Simple Schema types supported:
 
-Works only for fields of the following type: `String, Number, Boolean, [String], [Number], [Boolean]`.
+(all except `Object` and `[Object]`)
+
+```
+  String
+  Number
+  Boolean
+  Date
+  [String]
+  [Number]
+  [Boolean]
+  [Date]
+
+```
+
