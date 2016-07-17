@@ -15,6 +15,12 @@ const subList = new SimpleSchema({
   },
   field2: {
     type: Number
+  },
+  field3: {
+    type: Object
+  },
+  'field3.attr': {
+    type: String
   }
 });
   
@@ -43,6 +49,15 @@ Lists.schema = new SimpleSchema({
   creator: {
     type: String,
     label: 'Creator'
+  },
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isInsert)
+        return new Date();
+      if (this.isUpsert)
+        return {$setOnInsert: new Date()};
+    }
   },
   sublist: {
     type: subList

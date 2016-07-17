@@ -29,6 +29,15 @@ Tasks.schema = new SimpleSchema({
   list: {
     type: String
   },
+  createdAt: {
+    type: Date,
+    autoValue: function() {
+      if (this.isInsert)
+        return new Date();
+      if (this.isUpsert)
+        return {$setOnInsert: new Date()};
+    }
+  },
 });
 Tasks.attachSchema(Tasks.schema);
 

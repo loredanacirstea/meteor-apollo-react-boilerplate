@@ -1,5 +1,5 @@
 import '/imports/startup/client';
-import '/imports/api/api';
+import { db } from '/imports/api/api';
 
 import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
@@ -9,9 +9,9 @@ import ApolloClient from 'apollo-client';
 import { meteorClientConfig } from 'meteor/apollo';
 import { ApolloProvider } from 'react-apollo';
 
-import { registerGqlTag } from 'apollo-client/gql';
-registerGqlTag();
-
+//import { registerGqlTag } from 'apollo-client/gql';
+//registerGqlTag();
+console.log(db);
 //import App from '/imports/ui/App';
 
 const client = new ApolloClient(meteorClientConfig());
