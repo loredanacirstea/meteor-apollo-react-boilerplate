@@ -4,6 +4,9 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 const Tasks = new Mongo.Collection('Tasks');
 
 Tasks.schema = new SimpleSchema({
+  _id: {
+    type: String
+  },
   title: { 
     type: String 
   },

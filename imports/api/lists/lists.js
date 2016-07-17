@@ -19,6 +19,9 @@ const subList = new SimpleSchema({
 });
   
 Lists.schema = new SimpleSchema({
+  _id: {
+    type: String
+  },
   title: { 
     type: String 
   },

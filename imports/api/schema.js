@@ -9,7 +9,6 @@ const schema = [`
   type Query {
     list(id: String): List
     task(id: String!): Task
-    taskss(id: String!): [Task]
   }
 
   schema {

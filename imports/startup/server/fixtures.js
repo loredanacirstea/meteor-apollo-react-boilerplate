@@ -12,7 +12,7 @@ let listdata = [
     "creator" : "Lore",
     "sublist" : {
         "field1" : "sublist field1",
-        "field2" : "sublist field2"
+        "field2" : 2
     },
     "locked" : false
   }

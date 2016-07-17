@@ -8,6 +8,8 @@ Define your Simple Schemas for your collection and let `schema-graphql-bridge` d
 
 `meteor add kuip:schema-graphql-bridge`
 
+- demo: https://www.youtube.com/watch?v=5Z7ZSUIdamg
+
 ```
   let schema = SchemaBridge.schema(SimpleSchema, [options]);
   let resolvers = SchemaBridge.resolvers(SimpleSchema, [options]);

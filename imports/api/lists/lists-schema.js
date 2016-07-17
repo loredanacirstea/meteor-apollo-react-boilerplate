@@ -7,10 +7,8 @@ let listSchema = SchemaBridge.schema(Lists.schema);
 
 listSchema = `
   type List {
-    _id: String!
     ${listSchema}
-
-   tasks: [Task]
+    tasks: [Task]
  }
 `;
 

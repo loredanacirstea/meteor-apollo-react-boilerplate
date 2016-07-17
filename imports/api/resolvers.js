@@ -12,12 +12,9 @@ const resolvers = {
     task(root, args, context) {
       return Tasks.findOne(args.id);
     },
-    taskss(root, args, context) {
-      return Tasks.find({list: args.id}).fetch;
-    }
   },
   List: listResolvers,
-  Task: taskResolvers
+  Task: taskResolvers,
 }
 
 export default resolvers;

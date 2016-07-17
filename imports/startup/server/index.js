@@ -19,9 +19,6 @@ import Tasks from '../../api/tasks/tasks';
 // This code updates the database when a field name is changed in the Simple Schema
 // Constraints: only 1 field changed, no additions, no deletions
 const getModifier = (keys1, keys2) => {
-  let idi = keys1.indexOf('_id');
-  if(idi != -1)
-    keys1.splice(idi, 1);
 
   if(keys1.length != keys2.length)
     return;
