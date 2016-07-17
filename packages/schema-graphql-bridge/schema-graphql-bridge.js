@@ -12,9 +12,9 @@ defaultMocks = {
   Date: () => new Date
 }
 
-getSchema = ({ schema, fields, name }) => {
+getSchema = (schema, { fields, name, except }={}) => {
   const S = schema._schema;
-  let keys = getFields({schema, fields});
+  let keys = getFields({schema, fields, except});
   let content = keys.map(k => {
     if(S[k].type == Object)
       return ``;
@@ -39,12 +39,14 @@ getSchema = ({ schema, fields, name }) => {
   `;
 };
 
-getResolvers = ({ schema, fields, name }) => {
+getResolvers = (schema, { fields, name, except } = {}) => {
   const S = schema._schema;
-  let keys = getFields({schema, fields});
+  let keys = getFields({schema, fields, except});
   let res = {};
   keys.forEach(k => {
-    res[k] = (obj) => obj[k];
+    res[k] = function(root, args, context) {
+      return root[k];
+    };
   });
   if(!name)
     return res;
@@ -54,9 +56,9 @@ getResolvers = ({ schema, fields, name }) => {
   return n;
 };
 
-getMocks = ({ schema, fields, name }) => {
+getMocks = (schema, { fields, name, except } = {}) => {
   const S = schema._schema;
-  let keys = getFields({schema, fields}),
+  let keys = getFields({schema, fields, except}),
     mocks = {};
   keys.forEach(k => {
     if(gqlType[S[k].type])
@@ -67,12 +69,9 @@ getMocks = ({ schema, fields, name }) => {
     mocks[name] = () => {
       let obj = {};
       keys.forEach(k => {
-        console.log(gqlType[S[k].type])
-        console.log(defaultMocks[gqlType[S[k].type]])
         if(gqlType[S[k].type])
           obj[k] = defaultMocks[gqlType[S[k].type]];
       })
-      console.log(obj);
       return obj;
     }
 
@@ -85,7 +84,7 @@ const SchemaBridge = {
   mocks: getMocks
 };
 
-const getFields = ({schema, fields}) => {
+const getFields = ({schema, fields, except=[]}) => {
   const S = schema._schema;
   let keys, kk = [];
   if(fields && fields.length)
@@ -94,7 +93,7 @@ const getFields = ({schema, fields}) => {
     keys = schema._firstLevelSchemaKeys;
 
   keys.forEach(k => {
-    if(S[k].type != Date && S[k].type != Object)
+    if(except.indexOf(k) == -1 && S[k].type != Date && S[k].type != Object)
       kk.push(k);
   });
   return kk;
