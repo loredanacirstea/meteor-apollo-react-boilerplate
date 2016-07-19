@@ -12,7 +12,7 @@ createApolloServer({
     pretty: true,
     schema,
     resolvers,
-    mocks
+    //mocks
     //connectors,
     //models,
     //context
