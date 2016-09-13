@@ -23,8 +23,6 @@ dburles:collection-helpers
 
 
 react-meteor-data       # Meteor data integration for React
-kadira:flow-router
-# kadira:react-layout
 
 apollo
 shell-server
