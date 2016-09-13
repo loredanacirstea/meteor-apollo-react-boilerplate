@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "apollo-client": "^0.4.15",
+    "apollo-connector-mongodb": "^1.0.2",
     "apollo-server": "^0.2.8",
     "body-parser": "^1.15.2",
     "eslint": "^3.5.0",
