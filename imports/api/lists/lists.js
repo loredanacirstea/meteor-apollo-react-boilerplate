@@ -17,7 +17,8 @@ const subList = new SimpleSchema({
     type: Number
   },
   field3: {
-    type: Object
+    type: Object,
+    optional: true,
   },
   'field3.attr': {
     type: String
