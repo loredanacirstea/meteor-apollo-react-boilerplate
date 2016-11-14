@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "apollo-client": "^0.4.15",
-    "apollo-server": "^0.2.8",
+    "apollo-server": "^0.3.0",
     "body-parser": "^1.15.2",
     "eslint": "^3.5.0",
     "express": "^4.14.0",
